@@ -11,6 +11,7 @@ HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, 'test_rsa.key'))
 class Server(paramiko.ServerInterface):
     def _init_(self):
         self.event = threading.Event()
+        print("ff")
 
     def check_channel_request(self, kind, chanid):
         if kind == 'session':
